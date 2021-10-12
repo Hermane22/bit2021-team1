@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rzel="stylesheet" type="text/css" href="style.css">
-    <title>contact App</title>
-</head>
-<body>
 <?php
 session_start();
-$bdd=new PDO('mysql:host=localhost;dbname=dps','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$bdd=new PDO('mysql:host=localhost;dbname=dps','root','akatsuki',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 ?>
 
@@ -21,7 +11,7 @@ $bdd=new PDO('mysql:host=localhost;dbname=dps','root','',array(PDO::ATTR_ERRMODE
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
 	<title>Contact Form</title>
 </head>
@@ -29,20 +19,14 @@ $bdd=new PDO('mysql:host=localhost;dbname=dps','root','',array(PDO::ATTR_ERRMODE
 
 	<div class="container">
 		<!--  SEARCH FORM -->
-		<header class="header">
+		<header class="header" style= background-color: white; >
 			
 			<form class="search-bar">
-				<input type="search-name" class="contact-search" name="search-area" placeholder="Search contacts">
+				<input type="search-name" class="contact-search" name="search-area" placeholder="  search contact">
 			</form>
 
-			<!--  ADD-CONTACT BUTTON/ICON -->
-			<a href="edit.php">+</i></a>
-				<input type="search-name" class="contact-search" name="search-area" placeholder="Search">
-			</form>
-
-			<!--  ADD-CONTACT BUTTON/ICON -->
-			<a href="edit.php"><i>+</i></a>
 		</header>
+		<hr>
 
 		<!--  CONTACT LIST -->
 		<section class="contacts-library">
@@ -62,10 +46,8 @@ $bdd=new PDO('mysql:host=localhost;dbname=dps','root','',array(PDO::ATTR_ERRMODE
 		</section>
 	</div>
 
+	<!--  ADD-CONTACT BUTTON/ICON -->
+			<a href="edit.php"><i> + </i></a>
+
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
- 
->>>>>>> 6f81d4454d727d65c7c3fee4c47852f2f69f1d38
