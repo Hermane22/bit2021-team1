@@ -1,6 +1,6 @@
 <?php
 session_start();
-$bdd=new PDO('mysql:host=localhost;dbname=dps','root','akatsuki',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$bdd=new PDO('mysql:host=localhost;dbname=dps','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 ?>
 
@@ -22,7 +22,11 @@ $bdd=new PDO('mysql:host=localhost;dbname=dps','root','akatsuki',array(PDO::ATTR
 		<header class="header" style= background-color: white; >
 			
 			<form class="search-bar">
+<<<<<<< HEAD
 				<input  type="search-name" class="contact-search" name="search-area" placeholder="  search contact" >
+=======
+				<input type="search-name" class="contact-search" name="search-area" placeholder="search contact">
+>>>>>>> b4e5ffbcb99c8199d6e48bbe7aabc372bfa4cf76
 			</form>
 				<!--  ADD-CONTACT BUTTON/ICON -->
 	<div class ="button-add">
@@ -30,6 +34,7 @@ $bdd=new PDO('mysql:host=localhost;dbname=dps','root','akatsuki',array(PDO::ATTR
 	</div>
 
 		</header>
+<<<<<<< HEAD
 
 
 		<!--  CONTACT LIST -->
@@ -55,6 +60,36 @@ $bdd=new PDO('mysql:host=localhost;dbname=dps','root','akatsuki',array(PDO::ATTR
 					}
 				?>
 		</section>
+=======
+		<hr>
+        
+
+		<!--  CONTACT LIST -->
+		<section class="contacts-library">
+				<ul class="contacts-list">
+			
+					<?php
+						$reponse=$bdd->query('SELECT * FROM list  ORDER BY fullname');
+						while($donnees=$reponse->fetch()){ ?>
+
+					<a href="contact-profile.php?id=<?php echo $donnees['N']; ?>">
+		
+						<div class="contact-section">
+							<li class="list__item">
+								<p class="contact-name"><?php echo $donnees['fullname'] ; ?></p>
+								<p class="relationship"><?php echo $donnees['relationship'] ; ?></p>
+							</li>
+						</div>
+					</a>
+
+					<hr>
+					<?php
+						}
+					?>
+					
+				</ul>
+			</section>
+>>>>>>> b4e5ffbcb99c8199d6e48bbe7aabc372bfa4cf76
 	</div>
 
 
