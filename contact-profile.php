@@ -34,7 +34,6 @@
 				<img src="icone/mail.svg" alt="mail">
 				<p class="email"><?php echo $donnees['mail']; ?></p>
 			</div>
-			
 			<div class="info-line">
 				<img src="icone/map-pin.svg" alt="map">
 				<p class="address"><?php echo $donnees['addresse']; ?></p>
