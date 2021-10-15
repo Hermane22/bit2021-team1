@@ -51,13 +51,11 @@ $bdd=new PDO('mysql:host=localhost;dbname=dps','root','',array(PDO::ATTR_ERRMODE
 					<?php
 						}
 					?>
-					
 				</ul>
 			</section>
 	</div>
 
 	<!--  ADD-CONTACT BUTTON/ICON -->
 			<a href="edit.php"><i> + </i></a>
-
 </body>
 </html>
