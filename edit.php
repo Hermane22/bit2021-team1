@@ -40,7 +40,7 @@ if(isset($_GET['id'])){
 			   <i class="fas fa-user"></i>
 				<input required type="text" class="type" name="fullname" placeholder="Full Name" value="<?php if(isset($_GET['id'])){ echo $donnees['fullname']; }?>">
 					
-			</div>
+		</div>
 
 			<div class="info-line">
 		      	<i class="fas fa-heart"></i>
