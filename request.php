@@ -1,4 +1,3 @@
-
 <?php
 $bdd=new PDO('mysql:host=localhost;dbname=dps','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 $requete=$bdd->prepare('INSERT INTO list(fullname,relationship,phone,mail,addresse,datet) VALUES (?,?,?,?,?,Now())');
@@ -6,10 +5,8 @@ $requete=$bdd->prepare('INSERT INTO list(fullname,relationship,phone,mail,addres
 $requete->execute(array($_POST['fullname'],$_POST['relationship'], $_POST['phone'],$_POST['mail'],$_POST['addresse']));
 
 if($requete) {
-   echo "<div>
-     <h3>Save succesfully.</h3>
-</div>";
-echo "save successfully go <a href='index.php'>back</a>";
+  
+  header("location:index.php");
 
 }else{
     echo "<div>
@@ -17,5 +14,5 @@ echo "save successfully go <a href='index.php'>back</a>";
 </div>";
 include("index.php");
 }
-?>
+?> 
 

@@ -1,4 +1,9 @@
-
+<?php
+	session_start();
+	$bdd=new PDO('mysql:host=localhost;dbname=dps','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+	$reponse=$bdd->query("SELECT * FROM list WHERE N=". $_GET['id']);
+	$donnees=$reponse->fetch();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,35 +21,27 @@
 				<img src="icone/arrow-left-circle.svg" alt="arrow">
 			</a>
 			<div class="hero-info">
-				<h1 class="name">Hermane BAGORO</h1>
+				<h1 class="name"><?php echo $donnees['fullname']; ?></h1>
 				<img src="icone/user.svg" alt="user" style = "width: 80px; color: white ">
-				<p  class="relationship">Friend</p>
+				<p  class="relationship"><?php echo $donnees['relationship']; ?></p>
 			</div>
 		</header>
-
 		<section class="contact-info">
-
 			<div class="info-line">
 				<img src="icone/phone-call.svg" alt="phone" >
-				<p class="phone-number">888.888.888</p>
+				<p class="phone-number"><?php echo $donnees['phone']; ?></p>
 			</div>
-
 		
-
 			<div class="info-line">
 				<img src="icone/mail.svg" alt="mail">
-				<p class="email">hermanebagoro@gmail.com</p>
+				<p class="email"><?php echo $donnees['mail']; ?></p>
 			</div>
-
-			
-
 			<div class="info-line">
 				<img src="icone/map-pin.svg" alt="map">
-				<p class="address">Palogo</p>
+				<p class="address"><?php echo $donnees['addresse']; ?></p>
 			</div>
 		</section>
-
-		<a href="edit.php">
+		<a href="edit.php?id=<?php echo $donnees['N'];?>">
 			<section class="edit-contact">
 				<div class="edit-button">
 					<img src="icone/settings.svg" alt="setting">
@@ -52,6 +49,5 @@
 			</section>
 		</a>
 	</div>
-
 </body>
 </html>
