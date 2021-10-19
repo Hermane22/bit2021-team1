@@ -10,13 +10,15 @@ body{
 .container{
 	max-width: 428px;
 	margin: 0 auto;
-	background-color: #313438;
+	background-color: whitesmoke;
 	min-height: 100vh;
 }
 
 a{
 	text-decoration: none;
 }
+
+
 
 .hero a i{
 	margin-left: 10px;
@@ -30,7 +32,7 @@ a{
 }
 
 .contact-info{
-	background-color:whitesmoke;
+	background-color:white;
 	padding: 3em 1.5em;
 }
 
@@ -47,9 +49,18 @@ a{
 	margin-top: 0px;
 }
 
+.hero-info h1{
+	text-align: center;
+	color: black;
+}
+
+.hero-info h3{
+	color: black;
+}
+
 .info-line{
 	display: flex;
-	color: blak;
+	color: black;
 	width: 90%;
 	margin: 0 auto;
 	align-items: center;
@@ -59,12 +70,12 @@ a{
 }
 
 .info-line input{
-	width: 70%;
+	width: 100%;
 	margin: 10px 0;
 	box-sizing: border-box;
 	border: none;
 	outline: none;
-	border-bottom: 2px solid #eee;
+	border-bottom: 2px solid gray;
 	transition: 0.2s;
 }
 
