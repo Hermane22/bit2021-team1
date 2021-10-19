@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$bdd=new PDO('mysql:host=localhost;dbname=dps','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+	$bdd=new PDO('mysql:host=localhost;dbname=dps','root','akatsuki',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 	$reponse=$bdd->query("SELECT * FROM list WHERE N=". $_GET['id']);
 	$donnees=$reponse->fetch();
 ?>
@@ -20,6 +20,9 @@
 			<a href="index.php">
 				<img src="icone/arrow-left-circle.svg" alt="arrow">
 			</a>
+			<a href="delete.php" class="delete-button">
+				<img src="icone/trash-2.svg" alt="trash" >
+			</a> 
 			<div class="hero-info">
 				<h1 class="name"><?php echo $donnees['fullname']; ?></h1>
 				<img src="icone/user.svg" alt="user" style = "width: 80px; color: white ">
@@ -44,10 +47,11 @@
 		<a href="edit.php?id=<?php echo $donnees['N'];?>">
 			<section class="edit-contact">
 				<div class="edit-button">
-					<img src="icone/settings.svg" alt="setting">
+					<img src="icone/edit.svg" alt="edit">
 				</div>
 			</section>
 		</a>
+				
 	</div>
 </body>
 </html>
