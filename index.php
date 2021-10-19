@@ -1,6 +1,6 @@
 <?php
 session_start();
-$bdd=new PDO('mysql:host=localhost;dbname=dps','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$bdd=new PDO('mysql:host=localhost;dbname=dps','root','akatsuki',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 ?>
 
@@ -21,9 +21,13 @@ $bdd=new PDO('mysql:host=localhost;dbname=dps','root','',array(PDO::ATTR_ERRMODE
 		<!--  SEARCH FORM -->
 		<header class="header" style= background-color: white; >
 			
-			<form class="search-bar">
-				<input type="search-name" class="contact-search" name="search-area" placeholder="search contact">
+			<form action="test.php" method="GET" class="search-bar">
+				<input type="search-name" class="contact-search" name="terme" placeholder="search contact">
+				<input type = "submit" name = "s" value = "Rechercher"> 
 			</form>
+
+
+
 				<!--  ADD-CONTACT BUTTON/ICON -->
 	<div class ="button-add">
 		<a href="edit.php"><i> + </i></a>
